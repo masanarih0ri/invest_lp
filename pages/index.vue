@@ -9,13 +9,10 @@
       sm8
       md6
     >
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
+      <h1 class="display-2 text-center mb-8">.display-2</h1>
       <v-card>
         <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
+          株式投資初心者がまず最初に読むべきページ
         </v-card-title>
         <v-card-text>
           <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
@@ -80,13 +77,9 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
 export default {
   components: {
-    Logo,
-    VuetifyLogo
   }
 }
 </script>
