@@ -9,66 +9,25 @@
       sm8
       md6
     >
-      <h1 class="display-2 text-center mb-8">.display-2</h1>
+      <h1 class="display-2 text-center mb-8">基礎から始める株式投資</h1>
       <v-card>
         <v-card-title class="headline">
-          株式投資初心者がまず最初に読むべきページ
+          株式投資を始めるにはどうしたらいいの？
         </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
+        <v-card-text class="subtitle-1">
+          <p>株式投資にはまず証券口座を開く必要があります。</p>
+          <p>証券口座は大手の会社であればどこで開いても大差はありませんが、多くの方々は<a href="">SBI証券</a>、<a href="">楽天証券</a>、<a href="">マネックス証券</a>あたりで口座を開いているかと思います。</p>
+          <p>なのでまずはご自身でそれぞれの証券会社のページに行き、証券口座の申し込み手続きをしましょう。</p>
           <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-          >
-            Nuxt GitHub
-          </a>
         </v-card-text>
         <v-card-actions>
           <v-spacer />
           <v-btn
             color="primary"
             nuxt
-            to="/inspire"
+            to="/howtopurchase"
           >
-            Continue
+            次へ
           </v-btn>
         </v-card-actions>
       </v-card>
