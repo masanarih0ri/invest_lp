@@ -9,27 +9,52 @@
       sm8
       md6
     >
-      <h1 class="display-2 text-center mb-8">基礎から始める株式投資</h1>
+      <!-- <h1 class="display-2 text-center mb-8">配当金ツール</h1> -->
+      <v-card class="mb-6 pa-8">
+        <v-card-title class="headline">
+          データを入力してください
+        </v-card-title>
+        <v-form
+          ref="form"
+          v-model="valid"
+          :lazy-validation="lazy"
+        >
+          <v-text-field
+            v-model="name"
+            :counter="20"
+            :rules="nameRules"
+            label="Name"
+            required
+          ></v-text-field>
+          <v-text-field
+          v-model.number="nowStockPrice"
+          label="現在株価"
+        ></v-text-field>
+        <v-text-field
+          v-model.number="yield1"
+          label="配当金1"
+        ></v-text-field>
+        <v-text-field
+          v-model.number="yield2"
+          label="配当金2"
+        ></v-text-field>
+        <v-text-field
+          v-model.number="yield3"
+          label="配当金3"
+        ></v-text-field>
+        <v-text-field
+          v-model.number="yield4"
+          label="配当金4"
+        ></v-text-field>
+        </v-form>
+      </v-card>
       <v-card>
         <v-card-title class="headline">
-          株式投資を始めるにはどうしたらいいの？
+          計算結果
         </v-card-title>
-        <v-card-text class="subtitle-1">
-          <p>株式投資にはまず証券口座を開く必要があります。</p>
-          <p>証券口座は大手の会社であればどこで開いても大差はありませんが、多くの方々は<a href="">SBI証券</a>、<a href="">楽天証券</a>、<a href="">マネックス証券</a>あたりで口座を開いているかと思います。</p>
-          <p>なのでまずはご自身でそれぞれの証券会社のページに行き、証券口座の申し込み手続きをしましょう。</p>
-          <hr class="my-3">
+        <v-card-text>
+          {{ calcYield }}%
         </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/howtopurchase"
-          >
-            次へ
-          </v-btn>
-        </v-card-actions>
       </v-card>
     </v-flex>
   </v-layout>
@@ -39,6 +64,31 @@
 
 export default {
   components: {
+  },
+  data: function() {
+    return {
+      name: '',
+      nowStockPrice: 0,
+      yield1: 0,
+      yield2: 0,
+      yield3: 0,
+      yield4: 0,
+      valid: true,
+      nameRules: [
+        v => !!v || 'Name is required',
+        v => (v && v.length <= 20) || 'Name must be less than 10 characters',
+      ],
+      lazy: false
+    }
+  },
+  computed: {
+    calcYield() {
+      return (this.yield1 + this.yield2 + this.yield3 + this.yield4) / this.nowStockPrice * 100 || 0;
+    },
+
+    plus() {
+      return this.yield1 + this.yield2 + this.yield3 + this.yield4;
+    }
   }
 }
 </script>
